@@ -1,0 +1,124 @@
+                /*Initializing variables*/
+                
+                $header1:4rem;
+                $header2: 3rem;
+                $header3:2.5rem;
+                $header4:2rem;
+                $bigtext:1.9rem;
+                $text:1.5rem;
+                $gray-text:#2c2c2c;
+                $gradient:linear-gradient(left, #38d39f, #38a4d3);
+                $background-color:#144353;
+                /*For calling it we can do like font-size:calc($header1+1vw)*/
+                /*Helper Functions below*/
+                
+                @mixin flex($direction, $justify, $align) {
+                    display: flex;
+                    flex-direction: $direction;
+                    justify-content: $justify;
+                    align-items: $align;
+                }
+                
+                @import "global";
+                @import "intro";
+                @import "projects";
+                @import "contact";
+                @import "footer";
+                @media screen and (max-width:1450px) {
+                    .travelly,
+                    .elena-joy {
+                        flex: 1 1 50rem;
+                    }
+                }
+                
+                @media screen and (max-width: 1366px) {
+                    .intro-images svg {
+                        width: 90%;
+                    }
+                    .travelly,
+                    .elena-joy {
+                        flex: 1 1 50rem;
+                    }
+                    .travelly img,
+                    .elena-joy img {
+                        width: 90%;
+                        height: 90%;
+                    }
+                }
+                
+                @media screen and (max-width: 1365px) {
+                    .splash {
+                        display: none;
+                    }
+                    nav {
+                        width: 100%;
+                    }
+                }
+                
+                @media screen and (max-width: 1333px) {
+                    .travelly img,
+                    .elena-joy img {
+                        width: 80%;
+                        height: 80%;
+                    }
+                }
+                
+                @media screen and (max-width: 1040px) {
+                    .splash {
+                        display: none;
+                    }
+                }
+                
+                @media screen and (max-width: 888px) {
+                    html {
+                        font-size: 58.5%;
+                    }
+                    .intro-images svg {
+                        width: 90%;
+                    }
+                }
+                
+                .intro-social a {
+                    object-fit: cover;
+                    .projects {
+                        h2 {
+                            font-size: 58.5%;
+                        }
+                    }
+                }
+                
+                @media screen and (max-width: 831px) {
+                    .intro-images svg {
+                        width: 60%;
+                        height: 60%;
+                        margin-top: 3rem;
+                        margin-left: 25%;
+                    }
+                }
+                
+                @media screen and (max-width: 587px) {
+                    html {
+                        font-size: 50%;
+                    }
+                    .projects {
+                        h2 {
+                            font-size: 50%;
+                        }
+                    }
+                }
+                
+                @media screen and (max-width:509px) {
+                    .main-head {
+                        margin-top: 1rem;
+                    }
+                    nav {
+                        #logo {
+                            @include flex(column, center, center);
+                            flex: 1 1 40rem;
+                        }
+                    }
+                    form {
+                        padding: 0;
+                        width: 100%;
+                    }
+                }

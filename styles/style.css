@@ -1,0 +1,584 @@
+/*Initializing variables*/
+/*For calling it we can do like font-size:calc($header1+1vw)*/
+/*Helper Functions below*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  list-style-type: none;
+  color: #2c2c2c;
+}
+
+ul {
+  list-style: none;
+}
+
+li,
+a,
+input,
+label {
+  font-size: 1.5rem;
+}
+
+body {
+  -webkit-animation: openning 1s ease;
+          animation: openning 1s ease;
+}
+
+.main-head {
+  width: 95%;
+  margin: 0 0 0 auto;
+}
+
+nav {
+  min-height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+nav #logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10rem;
+          flex: 1 1 10rem;
+}
+
+nav #logo h2 {
+  margin: 2rem;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+nav ul a {
+  font-size: 1.9rem;
+}
+
+.intro {
+  width: 90%;
+  margin: auto;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.intro h1 {
+  font-size: 6rem;
+  padding-top: 2rem;
+  background: -webkit-gradient(linear, left top, right top, from(#38d39f), to(#38a4d3));
+  background: linear-gradient(left, #38d39f, #38a4d3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.intro h2 {
+  font-size: 4rem;
+  padding: 3.5rem 0rem;
+}
+
+.intro p {
+  font-size: 1.9rem;
+  color: #2c2c2c;
+}
+
+.intro-social {
+  margin-top: 2rem;
+}
+
+.intro-social a {
+  margin-right: 1rem;
+}
+
+.intro-images,
+.intro-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.splash {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  z-index: -3;
+  overflow: hidden;
+}
+
+.active {
+  background: #2c2c2c;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+}
+
+.active a {
+  color: white;
+}
+
+#plant-left {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  animation: plant 1s ease infinite alternate-reverse forwards;
+}
+
+#plant-right {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-animation: plant 1.5s ease infinite alternate 1s forwards;
+          animation: plant 1.5s ease infinite alternate 1s forwards;
+}
+
+#me {
+  -webkit-transform: rotateZ(-5deg);
+          transform: rotateZ(-5deg);
+  -webkit-animation: me 2s linear infinite alternate 1s forwards;
+          animation: me 2s linear infinite alternate 1s forwards;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+#clock-arrow {
+  -webkit-animation: clock 2s linear infinite;
+          animation: clock 2s linear infinite;
+  transform-box: fill-box;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+@-webkit-keyframes me {
+  from {
+    -webkit-transform: rotateZ(-5deg);
+            transform: rotateZ(-5deg);
+  }
+  to {
+    -webkit-transform: rotateZ(5deg);
+            transform: rotateZ(5deg);
+  }
+}
+
+@keyframes me {
+  from {
+    -webkit-transform: rotateZ(-5deg);
+            transform: rotateZ(-5deg);
+  }
+  to {
+    -webkit-transform: rotateZ(5deg);
+            transform: rotateZ(5deg);
+  }
+}
+
+@-webkit-keyframes plant {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+  }
+}
+
+@keyframes plant {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+  }
+}
+
+@-webkit-keyframes clock {
+  from {
+    -webkit-transform: translateZ(0deg);
+            transform: translateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes clock {
+  from {
+    -webkit-transform: translateZ(0deg);
+            transform: translateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes openning {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes openning {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.projects {
+  width: 90%;
+  margin: auto;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+}
+
+.projects h2 {
+  margin: 3rem;
+}
+
+.travelly,
+.elena-joy {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50rem;
+          flex: 1 1 50rem;
+}
+
+.form-section {
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3rem;
+}
+
+.form-section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3rem 10rem;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 10px 40px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 10px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+}
+
+.form-section form label {
+  font-size: 1.9rem;
+  color: #2c2c2c;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-section form input {
+  padding: 1rem;
+}
+
+.form-section form label,
+.form-section form button {
+  margin: 1rem;
+}
+
+.form-section form label:focus,
+.form-section form button:focus {
+  outline: 2px black solid;
+}
+
+.form-section form textarea {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-section form button {
+  width: 100%;
+  padding: 1.5rem;
+  background: #144353;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.9rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-section form button:focus {
+  background: #367470;
+}
+
+footer {
+  min-height: 10vh;
+  margin-top: 2rem;
+  padding: 0rem 5rem;
+  background: #144353;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer h3 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+footer ul {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1450px) {
+  .travelly,
+  .elena-joy {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50rem;
+            flex: 1 1 50rem;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .intro-images svg {
+    width: 90%;
+  }
+  .travelly,
+  .elena-joy {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50rem;
+            flex: 1 1 50rem;
+  }
+  .travelly img,
+  .elena-joy img {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .splash {
+    display: none;
+  }
+  nav {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1333px) {
+  .travelly img,
+  .elena-joy img {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .splash {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 888px) {
+  html {
+    font-size: 58.5%;
+  }
+  .intro-images svg {
+    width: 90%;
+  }
+}
+
+.intro-social a {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.intro-social a .projects h2 {
+  font-size: 58.5%;
+}
+
+@media screen and (max-width: 831px) {
+  .intro-images svg {
+    width: 60%;
+    height: 60%;
+    margin-top: 3rem;
+    margin-left: 25%;
+  }
+}
+
+@media screen and (max-width: 587px) {
+  html {
+    font-size: 50%;
+  }
+  .projects h2 {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 509px) {
+  .main-head {
+    margin-top: 1rem;
+  }
+  nav #logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 40rem;
+            flex: 1 1 40rem;
+  }
+  form {
+    padding: 0;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

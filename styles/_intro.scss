@@ -1,0 +1,142 @@
+body {
+    animation: openning 1s ease;
+}
+
+.main-head {
+    width: 95%;
+    margin: 0 0 0 auto;
+}
+
+nav {
+    min-height: 10vh;
+    @include flex(row, space-around, center);
+    width: 60%;
+    flex-wrap: wrap;
+    #logo {
+        @include flex(row, flex-start, center);
+        flex: 1 1 10rem;
+        h2 {
+            margin: 2rem
+        }
+    }
+    ul {
+        @include flex(row, space-around, center);
+        flex: 1 1 40rem;
+        a {
+            font-size: $bigtext;
+        }
+    }
+}
+
+.intro {
+    width: 90%;
+    margin: auto;
+    min-height: 90vh;
+    @include flex(row, space-between, center);
+    flex-wrap: wrap;
+    h1 {
+        font-size: 6rem;
+        padding-top: 2rem;
+        background: $gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+    h2 {
+        font-size: 4rem;
+        padding: 3.5rem 0rem;
+    }
+    p {
+        font-size: $bigtext;
+        color: $gray-text;
+    }
+}
+
+.intro-social {
+    margin-top: 2rem;
+    a {
+        margin-right: 1rem;
+    }
+}
+
+.intro-images,
+.intro-text {
+    flex: 1 1 40rem;
+}
+
+.splash {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    height: 100%;
+    z-index: -3;
+    overflow: hidden;
+}
+
+.active {
+    background: $gray-text;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    a {
+        color: white;
+    }
+}
+
+#plant-left {
+    transform: translateY(0%);
+    animation: plant 1s ease infinite alternate-reverse forwards;
+}
+
+#plant-right {
+    transform: translateY(0%);
+    animation: plant 1.5s ease infinite alternate 1s forwards;
+}
+
+#me {
+    transform: rotateZ(-5deg);
+    animation: me 2s linear infinite alternate 1s forwards;
+    transform-origin: bottom;
+}
+
+#clock-arrow {
+    animation: clock 2s linear infinite;
+    transform-box: fill-box;
+    transform-origin: bottom;
+}
+
+@keyframes me {
+    from {
+        transform: rotateZ(-5deg);
+    }
+    to {
+        transform: rotateZ(5deg);
+    }
+}
+
+@keyframes plant {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(-15%);
+    }
+}
+
+@keyframes clock {
+    from {
+        transform: translateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes openning {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
